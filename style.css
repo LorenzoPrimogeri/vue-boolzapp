@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+.border-g{
+    border: 1px solid green;
+}
+.border-y{
+    border: 1px solid yellow;
+}
+.border-y{
+    border: 1px solid grey;
+}
+body{
+    height: 800px;
+}
+.total{
+    height: 100%;
+}
+.bg-black{
+    background-color: black;
+}
+.myProfile{
+    width: 30%;
+}
+.col-4 img{
+    width: 50%;
+    border-radius: 50%;
+}
+.bg-grey{
+    background-color: hsl(0deg 0% 92%);
+}
+.bg-heavenly{
+    background-color: hsl(199deg 95% 77%);
+}
+.c-heavenly{
+    color: hsl(199deg 95% 77%);
+}
+.c-grey{
+    color: grey
+}
+.fa-bell-slash{
+   font-size: 20px;
+   border: 1px solid white;
+   border-radius: 50%;
+}
+input{
+    border: none !important;
+}
+.w-20{
+    width: 20%;
+}
+a{
+    text-decoration: none !important;
+}
+.message{
+    overflow-y: scroll;
+}
