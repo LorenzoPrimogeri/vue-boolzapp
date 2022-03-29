@@ -22,14 +22,14 @@
 <i class="fa-solid fa-circle-notch"></i> circle
 <i class="fa-solid fa-face-smile"></i> smile
 <i class="fa-solid fa-microphone"></i> microphone
+<i class="fas fa-paperclip"></i> clip
 
 
 -->
 
 <body class="bg-black">
-    <div id="app" class="container-fluid total">
-        <div class="container py-3 total bg-white">
-
+    <div id="app" class="container-fluid total m-auto">
+        <div class="container total bg-white">
             <div class="row total">
                 <!-- parte sinistra (messaggi degli utenti) -->
                 <div class="col-4 total border-y p-0">
@@ -41,7 +41,7 @@
                         </div>
                         <div class="d-flex align-items-center c-grey">
                             <i class="fa-solid fa-circle-notch p-1"></i>
-                            <i class="fa-solid fa-message p-1"></i>
+                            <i class="fa-solid fa-message p-3"></i>
                             <i class="fa-solid fa-ellipsis-vertical p-1"></i>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                     </div>
                     <!-- user message -->
                     <div class="d-flex py-2 flex-wrap message">
-                        <div v-for="(contact, index) in contacts" class="w-100 d-flex py-2">
+                        <div v-for="(contact, contactindex) in contacts" class="card w-100 d-flex py-2">
                             <div class="d-flex py-2">
                                 <div class="w-20">
                                     <img class="w-100 px-2" :src="'img/avatar'+contact.avatar+'.jpg'"
@@ -76,23 +76,34 @@
                                 </div>
                                 <div class="w-75">
                                     <p class="m-0">{{contact.name}}</p>
-                                    <a class="c-grey">{{contact.messages.message}}</a>
+                                    <a class="c-grey">{{contact.messages[contact.messages.length-1].message}}</a>
                                 </div>
                             </div>
                             <div>
-                                <span class="c-grey">12:00</span>
+                                <span class="c-grey"></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- parte destra (chat) -->
-                <div class="col-8 total border-g">
-
+                <div class="col-8 total border-g p-0">
+                    <div class="p-2 d-flex bg-grey justify-content-between">
+                        <div class="w-10">
+                            <img class="lp-rounded" :src="'img/avatar'+contacts[index].avatar+'.jpg'" alt="">
+                        </div>
+                        <div class="d-flex align-items-center flex-wrap">
+                            <h4 class="m-0 w-100">{{contacts[index].name}}</h4>
+                            <span class="c-grey">Utimo accesso oggi alle 12:00</span>
+                        </div>
+                        <div class="d-flex align-items-center c-grey">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fas fa-paperclip px-3"></i>
+                            <i class="fa-solid fa-ellipsis-vertical p-1"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
-    </div>
 </body>
 
 </html>

@@ -175,7 +175,8 @@ const contacts = [
 const app = new Vue({
     el: "#app",
     data: {
-        contacts
+        contacts,
+        index: 1,
     },
     methods: {
 
