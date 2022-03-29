@@ -14,11 +14,7 @@
     border: 1px solid grey;
 }
 body{
-    height: calc(100vh - 40px);
     margin: 20px auto;
-}
-.total{
-    height: 100%;
 }
 .bg-black{
     background-color: black;
@@ -65,8 +61,10 @@ a{
 }
 .message{
     overflow-y: auto;
-    height: 70%;
 }
 .card:hover{
     background-color: rgb(196, 193, 193);
+}
+.col-8{
+    background-image: url(img/mine.jpg);
 }
