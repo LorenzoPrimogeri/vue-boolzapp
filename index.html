@@ -69,7 +69,7 @@
                     <!-- user message -->
                     <div class="d-flex py-2 flex-wrap message">
                         <div v-for="(contact, contactindex) in contacts" class="card w-100 d-flex py-2">
-                            <div class="d-flex py-2">
+                            <div class="d-flex py-2 w-100">
                                 <div class="w-20">
                                     <img class="w-100 px-2" :src="'img/avatar'+contact.avatar+'.jpg'"
                                         :alt="contact.name">
@@ -78,9 +78,9 @@
                                     <p class="m-0">{{contact.name}}</p>
                                     <a class="c-grey">{{contact.messages[contact.messages.length-1].message}}</a>
                                 </div>
-                            </div>
-                            <div>
-                                <span class="c-grey">{{contact.messages[contact.messages.length-1].date}}</span>
+                                <div class="w-25">
+                                    <span class="c-grey">{{contact.messages[contact.messages.length-1].date}}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
