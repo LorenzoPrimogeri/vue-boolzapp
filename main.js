@@ -177,6 +177,7 @@ const app = new Vue({
         contacts,
         index: 0,
         messaggio: "",
+        userName: "",
         currentTime: new Date()
 
     },
@@ -199,6 +200,14 @@ const app = new Vue({
                 return "sent-message";
             }
         },
+        messaggioRisposta(hr, mn) {
+            let newMessaggio = {
+                date: hr + ":" + mn,
+                message: "ok",
+                status: 'received'
+            }
+            this.contacts[this.index].messages.push(newMessaggio);
+        },
         mandaMessaggio() {
             let hr = this.currentTime.getHours();
             let mn = this.currentTime.getMinutes();
@@ -216,7 +225,17 @@ const app = new Vue({
             }
             this.contacts[this.index].messages.push(newMessaggio);
             this.messaggio = '';
+            const time = setTimeout(this.messaggioRisposta, 1000, hr, mn)
+        },
+        ricercaPersone() {
+
         }
     }
 
 });
+/*
+const string = "marco";
+const substring = "marc";
+
+console.log(string.includes(substring)); // true
+*/

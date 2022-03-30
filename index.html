@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="main.js" defer></script>
+    <title>boolzapp</title>
+    <link rel="shortcut icon" href="img/boolzapp.svg" type="image/x-icon">
 </head>
 <!-- icone 
 <i class="fa-solid fa-bell-slash"></i> notifiche
@@ -60,7 +62,8 @@
                                 <i class="fa-solid fa-magnifying-glass c-grey"></i>
                             </div>
                             <div class="w-75">
-                                <input class="w-75" type="text" placeholder="Cerca o inizia una nuova chat">
+                                <input class="w-75" type="text" placeholder="Cerca o inizia una nuova chat"
+                                    v-model="userName" @keyup.enter="ricercaUtente()">
                             </div>
                         </div>
                     </div>
