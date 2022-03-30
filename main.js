@@ -200,7 +200,6 @@ const app = new Vue({
             }
         },
         mandaMessaggio() {
-            console.log("sono qui");
             let hr = this.currentTime.getHours();
             let mn = this.currentTime.getMinutes();
             if (mn < 10) {
@@ -215,7 +214,6 @@ const app = new Vue({
                 message: this.messaggio.trim(),
                 status: 'sent'
             }
-            console.log(newMessaggio);
             this.contacts[this.index].messages.push(newMessaggio);
             this.messaggio = '';
         }
