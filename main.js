@@ -217,9 +217,18 @@ const app = new Vue({
             this.messaggio = '';
             const time = setTimeout(this.messaggioRisposta, 1000, hr, mn)
         },
-        ricercaPersone() {
-
+        ricercaUtente() {
+            for (let i = 0; i < this.contacts.length; i++) {
+                if (!this.contacts[i].name.includes(this.userName)) {
+                    this.contacts[i].visible = false;
+                    console.log(this.contacts[i]);
+                    console.log("verificato");
+                }
+            }
+            this.userName = '';
         }
+
+
     }
 
 });
