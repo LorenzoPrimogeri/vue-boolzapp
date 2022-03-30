@@ -67,7 +67,7 @@ a{
 }
 .user-message{
     overflow-y: auto;
-    height: calc(100% - 226px);
+    height: calc(100% - 225px);
 }
 .card:hover{
     background-color: rgb(196, 193, 193);
@@ -82,7 +82,7 @@ a{
     height:50px;
 }
 .chat{
-    height: calc(900px - 140px);
+    height: calc(900px - 130px);
     overflow-y: auto;
 }
 .chat-container{
