@@ -171,8 +171,7 @@ const app = new Vue({
         messaggio: "",
         userName: "",
         currentTime: new Date(),
-        userChat: document.querySelector("#UserChat")
-
+        isHovering: false
     },
     methods: {
         //al click cambia la chat
@@ -231,6 +230,11 @@ const app = new Vue({
                 console.log(this.contacts[i].visible);
             }
             this.userName = '';
+        },
+        infOrDelete() {
+            element = document.querySelector("#Open");
+            element.classList.toggle("visible");
+            console.log(element);
         },
     }
 });

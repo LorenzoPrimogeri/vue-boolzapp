@@ -101,3 +101,34 @@ a{
 .sent-message{
     background-color: hsl(94deg 84% 85%);
 }
+.lp-hidden{
+    z-index: 2;
+    visibility: hidden;
+    position: absolute;
+    top:35px;
+    right: 3px;
+    width: 150px;
+    height: 80px;
+    background-color: white;
+    border-radius: 10px;
+}
+.date{
+    font-size: 12px;
+}
+.fa-angle-down{
+    z-index: 3;
+    padding: 2px;
+    background-color:transparent;
+    border-radius: 50%;
+    visibility: hidden;
+    position: absolute;
+    font-size: 26px;
+    bottom: 10px;
+    cursor: pointer;
+}
+.hover{
+    
+}
+.cardMessage:hover .fa-angle-down{
+    visibility: visible;
+}
