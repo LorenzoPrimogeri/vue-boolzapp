@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-weight: 500;
 }
+ul{
+    list-style-type: none;
+}
 .border-g{
     border: 1px solid green;
 }
@@ -13,14 +16,14 @@
 .border-y{
     border: 1px solid grey;
 }
-body{
-    margin: 20px auto;
-}
 .bg-black{
     background-color: black;
 }
 .myProfile{
     width: 30%;
+}
+.col-4{
+    height: 900px;
 }
 .col-4 img{
     width: 50%;
@@ -53,18 +56,46 @@ input{
 .w-20{
     width: 20%;
 }
+.w-40{
+    width: 40%;
+}
 .w-10{
     width: 10%;
 }
 a{
     text-decoration: none !important;
 }
-.message{
+.user-message{
     overflow-y: auto;
+    height: calc(100% - 226px);
 }
 .card:hover{
     background-color: rgb(196, 193, 193);
 }
 .col-8{
     background-image: url(img/mine.jpg);
+}
+.height{
+    height:80px;
+}
+.height-50{
+    height:50px;
+}
+.chat{
+    height: calc(900px - 140px);
+    overflow-y: auto;
+}
+.chat-container{
+    margin: 10px 30px auto;
+}
+.chat-footer i{
+    font-size: 30px;
+}
+.sent-message{
+    background-color: hsl(94deg 84% 85%);
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }

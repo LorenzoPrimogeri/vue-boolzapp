@@ -15,17 +15,17 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '15:51',
                 message: 'Hai portato a spasso il cane?',
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:50:00',
+                date: '15:51',
                 message: 'Ricordati di stendere i panni',
                 status: 'sent'
             },
             {
-                date: '10/01/2020 16:15:22',
+                date: '15:51',
                 message: 'Tutto fatto!',
                 status: 'received'
             }
@@ -37,18 +37,18 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '20/03/2020 16:30:00',
+                date: '15:51',
                 message: 'Ciao come stai?',
                 status: 'sent'
             },
             {
-                date: '20/03/2020 16:30:55',
+                date: '15:51',
                 message: 'Bene grazie! Stasera ci vediamo?',
                 status: 'received'
             },
             {
-                date: '20/03/2020 16:35:00',
-                message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                date: '15:51',
+                message: 'Mi piacebnbbrebbe ma devo andare a fare la spesa.',
                 status: 'sent'
             }
         ],
@@ -59,17 +59,17 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '28/03/2020 10:10:40',
+                date: '15:51',
                 message: 'La Marianna va in campagna',
                 status: 'received'
             },
             {
-                date: '28/03/2020 10:20:10',
+                date: '15:51',
                 message: 'Sicuro di non aver sbagliato chat?',
                 status: 'sent'
             },
             {
-                date: '28/03/2020 16:15:22',
+                date: '15:51',
                 message: 'Ah scusa!',
                 status: 'received'
             }
@@ -81,12 +81,12 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '15:51',
                 message: 'Lo sai che ha aperto una nuova pizzeria?',
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:50:00',
+                date: '15:51',
                 message: 'Si, ma preferirei andare al cinema',
                 status: 'received'
             }
@@ -98,12 +98,12 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '15:51',
                 message: 'Ricordati di chiamare la nonna',
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:50:00',
+                date: '15:51',
                 message: 'Va bene, stasera la sento',
                 status: 'received'
             }
@@ -115,17 +115,17 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '15:51',
                 message: 'Ciao Claudia, hai novità?',
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:50:00',
+                date: '15:51',
                 message: 'Non ancora',
                 status: 'received'
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: '15:51',
                 message: 'Nessuna nuova, buona nuova',
                 status: 'sent'
             }
@@ -137,12 +137,12 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '15:51',
                 message: 'Fai gli auguri a Martina che è il suo compleanno!',
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:50:00',
+                date: '15:51',
                 message: 'Grazie per avermelo ricordato, le scrivo subito!',
                 status: 'received'
             }
@@ -154,32 +154,71 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '15:51',
                 message: 'Ciao, andiamo a mangiare la pizza stasera?',
                 status: 'received'
             },
             {
-                date: '10/01/2020 15:50:00',
+                date: '15:51',
                 message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
                 status: 'sent'
             },
             {
-                date: '10/01/2020 15:51:00',
+                date: '15:51',
                 message: 'OK!!',
                 status: 'received'
             }
         ],
-    }
+    },
 ]
-
 const app = new Vue({
     el: "#app",
     data: {
         contacts,
-        index: 1,
+        index: 0,
+        messaggio: "",
+        currentTime: new Date()
+
     },
     methods: {
-
+        //al click cambia la chat
+        takeindex(contactIndex) {
+            this.index = contactIndex;
+        },
+        sentOReceived(status) {
+            if (status == "received") {
+                return "justify-content-start"
+            } else {
+                return "justify-content-end";
+            }
+        },
+        sentOReceivedColor(status) {
+            if (status == "received") {
+                return "bg-white"
+            } else {
+                return "sent-message";
+            }
+        },
+        mandaMessaggio() {
+            console.log("sono qui");
+            let hr = this.currentTime.getHours();
+            let mn = this.currentTime.getMinutes();
+            if (mn < 10) {
+                mn = "0" + mn;
+            }
+            if (hr < 10) {
+                hr = "0" + hr;
+            }
+            console.log();
+            let newMessaggio = {
+                date: hr + ":" + mn,
+                message: this.messaggio.trim(),
+                status: 'sent'
+            }
+            console.log(newMessaggio);
+            this.contacts[this.index].messages.push(newMessaggio);
+            this.messaggio = '';
+        }
     }
 
 });

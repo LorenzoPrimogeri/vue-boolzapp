@@ -23,18 +23,16 @@
 <i class="fa-solid fa-face-smile"></i> smile
 <i class="fa-solid fa-microphone"></i> microphone
 <i class="fas fa-paperclip"></i> clip
-
-
 -->
 
 <body class="bg-black">
-    <div id="app" class="container-fluid total m-auto">
-        <div class="container total bg-white">
-            <div class="row total">
+    <div id="app" class="container-fluid m-auto">
+        <div class="container  bg-white">
+            <div class="row ">
                 <!-- parte sinistra (messaggi degli utenti) -->
-                <div class="col-4 total border-y p-0">
+                <div class="col-4 border-y p-0">
                     <!--My Profile-->
-                    <div class="d-flex justify-content-between bg-grey">
+                    <div class="d-flex justify-content-between bg-grey height">
                         <div class="myProfile">
                             <img class="py-2" src="img/avatar_io.jpg" alt="MyImg">
                             <span>Sofia</span>
@@ -46,7 +44,7 @@
                         </div>
                     </div>
                     <!-- Notifiche -->
-                    <div class="bg-heavenly d-flex py-2">
+                    <div class="bg-heavenly d-flex py-2 height">
                         <div class="w-25 d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-bell-slash p-3 bg-white c-heavenly"></i>
                         </div>
@@ -57,7 +55,7 @@
                     </div>
                     <!-- search chat -->
                     <div class=" py-2">
-                        <div class="d-flex border py-2 mx-2">
+                        <div class="d-flex border py-2 mx-2 height-50">
                             <div class="px-4">
                                 <i class="fa-solid fa-magnifying-glass c-grey"></i>
                             </div>
@@ -67,8 +65,9 @@
                         </div>
                     </div>
                     <!-- user message -->
-                    <div class="d-flex py-2 flex-wrap message">
-                        <div v-for="(contact, contactindex) in contacts" class="card w-100 d-flex py-2">
+                    <div class="d-flex py-2 flex-wrap user-message">
+                        <div v-for="(contact, contactindex) in contacts" class="card w-100 d-flex py-2"
+                            @click="takeindex(contactindex)">
                             <div class="d-flex py-2 w-100">
                                 <div class="w-20">
                                     <img class="w-100 px-2" :src="'img/avatar'+contact.avatar+'.jpg'"
@@ -86,8 +85,9 @@
                     </div>
                 </div>
                 <!-- parte destra (chat) -->
-                <div class="col-8 total border-g p-0">
-                    <div class="p-2 d-flex bg-grey justify-content-between">
+                <div class="col-8  border-g p-0">
+                    <!-- chat header -->
+                    <div class="p-2 d-flex bg-grey justify-content-between height">
                         <div class="w-10">
                             <img class="lp-rounded" :src="'img/avatar'+contacts[index].avatar+'.jpg'" alt="">
                         </div>
@@ -100,6 +100,26 @@
                             <i class="fas fa-paperclip px-3"></i>
                             <i class="fa-solid fa-ellipsis-vertical p-1"></i>
                         </div>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-container">
+                            <ul class="clearfix">
+                                <li v-for="(element) in contacts[index].messages"
+                                    :class="['w-100 my-2 p-2 d-flex', sentOReceived(element.status)]">
+                                    <div
+                                        :class="['w-40 my-2 rounded-3 d-flex justify-content-between', sentOReceivedColor(element.status)]">
+                                        <p class="m-0 p-2">{{element.message}}</p>
+                                        <span class="align-self-end px-1">{{element.date}}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chat-footer height-50 bg-grey w-100 d-flex justify-content-around align-items-center">
+                        <i class="far fa-smile c-grey"></i>
+                        <input type="text" v-model="messaggio" class="w-75 p-1 rounded-3"
+                            placeholder="scrivi un messaggio" @keyup.enter="mandaMessaggio">
+                        <i class="fa-solid fa-microphone c-grey"></i>
                     </div>
                 </div>
             </div>
