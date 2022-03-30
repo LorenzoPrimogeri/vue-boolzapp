@@ -161,6 +161,8 @@ const contacts = [
         ],
     },
 ]
+
+
 const app = new Vue({
     el: "#app",
     data: {
@@ -168,7 +170,8 @@ const app = new Vue({
         index: 0,
         messaggio: "",
         userName: "",
-        currentTime: new Date()
+        currentTime: new Date(),
+        userChat: document.querySelector("#UserChat")
 
     },
     methods: {
@@ -219,18 +222,17 @@ const app = new Vue({
         },
         ricercaUtente() {
             for (let i = 0; i < this.contacts.length; i++) {
-                if (!this.contacts[i].name.includes(this.userName)) {
-                    this.contacts[i].visible = false;
-                    console.log(this.contacts[i]);
-                    console.log("verificato");
+                if (this.contacts[i].name.includes(this.userName)) {
+                    this.contacts[i].visible = true;
                 }
+                else {
+                    this.contacts[i].visible = false;
+                }
+                console.log(this.contacts[i].visible);
             }
             this.userName = '';
-        }
-
-
+        },
     }
-
 });
 /*
 const string = "marco";
