@@ -16,16 +16,6 @@
     <title>boolzapp</title>
     <link rel="shortcut icon" href="img/boolzapp.svg" type="image/x-icon">
 </head>
-<!-- icone 
-<i class="fa-solid fa-bell-slash"></i> notifiche
-<i class="fa-solid fa-message"></i> messaggio
-<i class="fa-solid fa-ellipsis-vertical"></i> 3 puntini
-<i class="fa-solid fa-magnifying-glass"></i> search
-<i class="fa-solid fa-circle-notch"></i> circle
-<i class="fa-solid fa-face-smile"></i> smile
-<i class="fa-solid fa-microphone"></i> microphone
-<i class="fas fa-paperclip"></i> clip
--->
 
 <body class="bg-black">
     <div id="app" class="container-fluid m-auto">
@@ -73,8 +63,7 @@
                             class="card w-100 d-flex py-2" @click="takeindex(contactindex)">
                             <div class="d-flex py-2 w-100">
                                 <div class="w-20">
-                                    <img class="w-100 px-2" :src="'img/avatar'+contact.avatar+'.jpg'"
-                                        :alt="contact.name">
+                                    <img class="px-2" :src="'img/avatar'+contact.avatar+'.jpg'" :alt="contact.name">
                                 </div>
                                 <div class="w-75">
                                     <p class="m-0">{{contact.name}}</p>
@@ -93,7 +82,7 @@
                     <!-- chat header -->
                     <div class="p-2 d-flex bg-grey justify-content-between height">
                         <div class="d-flex">
-                            <div class="w-10">
+                            <div>
                                 <img class="lp-rounded" :src="'img/avatar'+contacts[index].avatar+'.jpg'" alt="">
                             </div>
                             <div class="d-flex align-items-center flex-wrap">

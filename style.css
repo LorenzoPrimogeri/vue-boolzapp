@@ -5,13 +5,13 @@
     font-weight: 500;
 }
 
-img {
-    width: 60px;
-}
-
 body {
     background-image: url("img/body-bg.jpg");
     margin: 10px 0px auto;
+}
+
+img {
+    width: 60px !important;
 }
 
 ul {
@@ -23,6 +23,7 @@ a {
 }
 
 input {
+    outline: none !important;
     border: none !important;
 }
 
