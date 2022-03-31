@@ -5,6 +5,10 @@
     font-weight: 500;
 }
 
+img {
+    width: 60px;
+}
+
 body {
     background-image: url("img/body-bg.jpg");
     margin: 10px 0px auto;
@@ -116,7 +120,7 @@ input {
 
 .user-message {
     overflow-y: auto;
-    height: calc(100% - 225px);
+    height: calc(100% - 230px);
 }
 
 .col-8 {

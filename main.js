@@ -7,16 +7,19 @@ const contacts = [
             {
                 date: '15:51',
                 message: 'Hai portato a spasso il cane?',
+                tooltip: false,
                 status: 'sent'
             },
             {
                 date: '15:51',
                 message: 'Ricordati di stendere i panni',
+                tooltip: false,
                 status: 'sent'
             },
             {
                 date: '15:51',
                 message: 'Tutto fatto!',
+                tooltip: false,
                 status: 'received'
             }
         ],
@@ -29,16 +32,19 @@ const contacts = [
             {
                 date: '15:51',
                 message: 'Ciao come stai?',
+                tooltip: false,
                 status: 'sent'
             },
             {
                 date: '15:51',
                 message: 'Bene grazie! Stasera ci vediamo?',
+                tooltip: false,
                 status: 'received'
             },
             {
                 date: '15:51',
                 message: 'Mi piacebnbbrebbe ma devo andare a fare la spesa.',
+                tooltip: false,
                 status: 'sent'
             }
         ],
@@ -51,16 +57,19 @@ const contacts = [
             {
                 date: '15:51',
                 message: 'La Marianna va in campagna',
+                tooltip: false,
                 status: 'received'
             },
             {
                 date: '15:51',
                 message: 'Sicuro di non aver sbagliato chat?',
+                tooltip: false,
                 status: 'sent'
             },
             {
                 date: '15:51',
                 message: 'Ah scusa!',
+                tooltip: false,
                 status: 'received'
             }
         ],
@@ -73,11 +82,13 @@ const contacts = [
             {
                 date: '15:51',
                 message: 'Lo sai che ha aperto una nuova pizzeria?',
+                tooltip: false,
                 status: 'sent'
             },
             {
                 date: '15:51',
                 message: 'Si, ma preferirei andare al cinema',
+                tooltip: false,
                 status: 'received'
             }
         ],
@@ -90,11 +101,13 @@ const contacts = [
             {
                 date: '15:51',
                 message: 'Ricordati di chiamare la nonna',
+                tooltip: false,
                 status: 'sent'
             },
             {
                 date: '15:51',
                 message: 'Va bene, stasera la sento',
+                tooltip: false,
                 status: 'received'
             }
         ],
@@ -107,16 +120,19 @@ const contacts = [
             {
                 date: '15:51',
                 message: 'Ciao Claudia, hai novità?',
+                tooltip: false,
                 status: 'sent'
             },
             {
                 date: '15:51',
                 message: 'Non ancora',
+                tooltip: false,
                 status: 'received'
             },
             {
                 date: '15:51',
                 message: 'Nessuna nuova notizia, buona giornata',
+                tooltip: false,
                 status: 'sent'
             }
         ],
@@ -129,11 +145,13 @@ const contacts = [
             {
                 date: '15:51',
                 message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                tooltip: false,
                 status: 'sent'
             },
             {
                 date: '15:51',
                 message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                tooltip: false,
                 status: 'received'
             }
         ],
@@ -146,16 +164,19 @@ const contacts = [
             {
                 date: '15:51',
                 message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                tooltip: false,
                 status: 'received'
             },
             {
                 date: '15:51',
                 message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                tooltip: false,
                 status: 'sent'
             },
             {
                 date: '15:51',
                 message: 'OK!!',
+                tooltip: false,
                 status: 'received'
             }
         ],
@@ -233,12 +254,12 @@ const app = new Vue({
             }
             this.userName = '';
         },
-        infOrDelete(message, index) {
-            // elimina i messaggi
-            element = document.querySelector("#Open");
-            element.classList.toggle("visible");
-            console.log(element);
-            // this.contacts[index].messages[index].remove(message);
+        visualizzaInfoMess(message) {
+            message.tooltip = !message.tooltip;
+        },
+        infOrDelete(messageIndex) {
+            this.contacts[this.index].messages.splice(messageIndex, 1);
+            console.log(this.contacts[this.index].messages);
         },
         bgColor(element) {
             // assegna il bg all'icona in base al messaggio

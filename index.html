@@ -56,8 +56,8 @@
                         </div>
                     </div>
                     <!-- search chat -->
-                    <div class=" py-2">
-                        <div class="d-flex border py-2 mx-2 height-50">
+                    <div class=" py-2  height-50">
+                        <div class="d-flex border py-2 mx-2">
                             <div class="px-4">
                                 <i class="fa-solid fa-magnifying-glass c-grey"></i>
                             </div>
@@ -78,9 +78,10 @@
                                 </div>
                                 <div class="w-75">
                                     <p class="m-0">{{contact.name}}</p>
-                                    <a class="c-grey">{{contact.messages[contact.messages.length-1].message}}</a>
+                                    <a v-if="(contact.messages.length > 0)"
+                                        class="c-grey">{{contact.messages[contact.messages.length-1].message}}</a>
                                 </div>
-                                <div class="w-25 d-flex justify-content-end px-2">
+                                <div v-if="(contact.messages.length > 0)" class="w-25 d-flex justify-content-end px-2">
                                     <span class="c-grey">{{contact.messages[contact.messages.length-1].date}}</span>
                                 </div>
                             </div>
@@ -109,20 +110,22 @@
                     <div class="chat">
                         <div class="chat-container">
                             <ul></ul>
-                            <li v-for="(element) in contacts[index].messages"
+                            <li v-for="(element, messageIndex) in contacts[index].messages"
                                 :class="['w-100 my-2 p-2 d-flex', sentOReceived(element.status)]">
-                                <div @click=""
+                                <div v-if="(contacts[index].messages.length > 0)" @mouseleave="element.tooltip = false"
+                                    @click=""
                                     :class="['position-relative p-1 w-40 my-2 rounded-3 cardMessage d-flex justify-content-between', sentOReceivedColor(element.status)]">
                                     <p class="m-0 p-2">{{element.message}}</p>
                                     <div class="d-flex align-items-end flex-column justify-content-end">
                                         <i :class="['fa-solid fa-angle-down px-2 c-grey', bgColor(element.status)]"
-                                            @click="infOrDelete()"></i>
+                                            @click="visualizzaInfoMess(element)"></i>
                                         <span class="align-self-end px-1 c-grey date">{{element.date}}</span>
                                     </div>
-                                    <div v-if="" class="lp-hidden">
+                                    <div :class="['lp-hidden',(element.tooltip)? 'visible':' ']"
+                                        @mouseenter="element.tooltip = true">
                                         <p class="m-0 py-2 border-bottom text-center">Info messaggio</p>
                                         <p class="m-0 py-2 border-bottom text-center pointer-event"
-                                            @click="infOrDelete(element.message,index)">Elimina Messaggio</p>
+                                            @click="infOrDelete(messageIndex)">Elimina Messaggio</p>
                                     </div>
                                 </div>
                             </li>
