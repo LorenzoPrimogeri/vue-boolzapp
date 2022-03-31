@@ -252,7 +252,6 @@ const app = new Vue({
                 }
                 console.log(this.contacts[i].visible);
             }
-            //this.userName = '';
         },
         visualizzaInfoMess(message) {
             message.tooltip = !message.tooltip;

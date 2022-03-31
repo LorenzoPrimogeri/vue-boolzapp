@@ -7,7 +7,7 @@
 
 body {
     background-image: url("img/body-bg.jpg");
-    margin: 10px 0px auto;
+    margin: 70px auto;
 }
 
 img {
@@ -99,7 +99,7 @@ input {
     color: lightgreen
 }
 
-.col-4 {
+.user-list {
     height: 900px;
 }
 
@@ -124,7 +124,7 @@ input {
     height: calc(100% - 207px);
 }
 
-.col-8 {
+.user-chat {
     background-image: url(img/mine.jpg);
 }
 
