@@ -244,7 +244,8 @@ const app = new Vue({
         ricercaUtente() {
             //ricerca un utente nella barra di ricerca a sinistra
             for (let i = 0; i < this.contacts.length; i++) {
-                if (this.contacts[i].name.includes(this.userName)) {
+                let nomi = this.contacts[i].name.toLowerCase();
+                if (nomi.includes(this.userName)) {
                     this.contacts[i].visible = true;
                 }
                 else {

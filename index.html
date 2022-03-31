@@ -101,7 +101,7 @@
                             <ul></ul>
                             <li v-for="(element, messageIndex) in contacts[index].messages"
                                 :class="['w-100 my-2 p-2 d-flex', sentOReceived(element.status)]">
-                                <div v-if="(contacts[index].messages.length > 0)" @mouseleave="element.tooltip = false"
+                                <div v-if="contacts[index].messages.length > 0" @mouseleave="element.tooltip = false"
                                     @click=""
                                     :class="['position-relative p-1 w-40 my-2 rounded-3 cardMessage d-flex justify-content-between', sentOReceivedColor(element.status)]">
                                     <p class="m-0 p-2">{{element.message}}</p>
