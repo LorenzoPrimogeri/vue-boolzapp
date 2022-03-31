@@ -116,7 +116,7 @@ const contacts = [
             },
             {
                 date: '15:51',
-                message: 'Nessuna nuova, buona nuova',
+                message: 'Nessuna nuova notizia, buona giornata',
                 status: 'sent'
             }
         ],
@@ -161,8 +161,6 @@ const contacts = [
         ],
     },
 ]
-
-
 const app = new Vue({
     el: "#app",
     data: {
@@ -171,14 +169,15 @@ const app = new Vue({
         messaggio: "",
         userName: "",
         currentTime: new Date(),
-        isHovering: false
+        toolTipOpenNumber: 0,
     },
     methods: {
-        //al click cambia la chat
         takeindex(contactIndex) {
+            //al click cambia la chat
             this.index = contactIndex;
         },
         sentOReceived(status) {
+            //assegna un allineamento in base allo status    
             if (status == "received") {
                 return "justify-content-start"
             } else {
@@ -186,6 +185,7 @@ const app = new Vue({
             }
         },
         sentOReceivedColor(status) {
+            //assegnazione bg in base allo status del messaggio
             if (status == "received") {
                 return "bg-white"
             } else {
@@ -193,6 +193,7 @@ const app = new Vue({
             }
         },
         messaggioRisposta(hr, mn) {
+            //risposta al messaggio mandato da noi
             let newMessaggio = {
                 date: hr + ":" + mn,
                 message: "ok",
@@ -220,6 +221,7 @@ const app = new Vue({
             const time = setTimeout(this.messaggioRisposta, 1000, hr, mn)
         },
         ricercaUtente() {
+            //ricerca un utente nella barra di ricerca a sinistra
             for (let i = 0; i < this.contacts.length; i++) {
                 if (this.contacts[i].name.includes(this.userName)) {
                     this.contacts[i].visible = true;
@@ -231,16 +233,20 @@ const app = new Vue({
             }
             this.userName = '';
         },
-        infOrDelete() {
+        infOrDelete(message, index) {
+            // elimina i messaggi
             element = document.querySelector("#Open");
             element.classList.toggle("visible");
             console.log(element);
+            // this.contacts[index].messages[index].remove(message);
         },
+        bgColor(element) {
+            // assegna il bg all'icona in base al messaggio
+            if (element == "received") {
+                return "bg-white"
+            } else {
+                return "sent-message"
+            }
+        }
     }
 });
-/*
-const string = "marco";
-const substring = "marc";
-
-console.log(string.includes(substring)); // true
-*/

@@ -1,124 +1,160 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-weight: 500;
 }
-body{
+
+body {
     background-image: url("img/body-bg.jpg");
     margin: 10px 0px auto;
 }
-ul{
+
+ul {
     list-style-type: none;
 }
-.border-g{
-    border: 1px solid green;
+
+a {
+    text-decoration: none !important;
 }
-.border-y{
-    border: 1px solid yellow;
+
+input {
+    border: none !important;
 }
-.border-y{
-    border: 1px solid grey;
+
+.w-10 {
+    width: 10%;
 }
-.bg-black{
-    background-color: black;
+
+.w-20 {
+    width: 20%;
 }
-.myProfile{
+
+.w-30 {
     width: 30%;
 }
-.col-4{
+
+.w-40 {
+    width: 40%;
+}
+
+.height {
+    height: 80px;
+}
+
+.height-50 {
+    height: 50px;
+}
+
+.border-g {
+    border: 1px solid green;
+}
+
+.border-y {
+    border: 1px solid yellow;
+}
+
+.border-gr {
+    border: 1px solid grey;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.bg-grey {
+    background-color: hsl(0deg 0% 92%);
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-heavenly {
+    background-color: hsl(199deg 95% 77%);
+}
+
+.bg-green {
+    background-color: lightgreen;
+}
+
+.sent-message {
+    background-color: hsl(94deg 84% 85%);
+}
+
+.c-heavenly {
+    color: hsl(199deg 95% 77%);
+}
+
+.c-grey {
+    color: grey
+}
+
+.c-green {
+    color: lightgreen
+}
+
+.col-4 {
     height: 900px;
 }
-.col-4 img{
+
+.col-4 img {
     width: 50%;
     border-radius: 50%;
 }
-.bg-grey{
-    background-color: hsl(0deg 0% 92%);
-}
-.bg-heavenly{
-    background-color: hsl(199deg 95% 77%);
-}
-.c-heavenly{
-    color: hsl(199deg 95% 77%);
-}
-.c-grey{
-    color: grey
-}
-.c-green{
-    color: lightgreen
-}
-.lp-rounded{
+
+.lp-rounded {
     width: 80%;
-    border-radius: 50%;  
+    border-radius: 50%;
 }
-.fa-bell-slash{
-   font-size: 20px;
-   border: 1px solid white;
-   border-radius: 50%;
+
+.fa-bell-slash {
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
 }
-input{
-    border: none !important;
-}
-.w-20{
-    width: 20%;
-}
-.w-40{
-    width: 40%;
-}
-.w-10{
-    width: 10%;
-}
-a{
-    text-decoration: none !important;
-}
-.user-message{
+
+.user-message {
     overflow-y: auto;
     height: calc(100% - 225px);
 }
-.card:hover{
-    background-color: rgb(196, 193, 193);
-}
-.col-8{
+
+.col-8 {
     background-image: url(img/mine.jpg);
 }
-.height{
-    height:80px;
-}
-.height-50{
-    height:50px;
-}
-.chat{
+
+.chat {
     height: calc(900px - 130px);
     overflow-y: auto;
 }
-.chat-container{
+
+.chat-container {
     margin: 10px 30px auto;
 }
-.chat-footer i{
+
+.chat-footer i {
     font-size: 30px;
 }
-.sent-message{
-    background-color: hsl(94deg 84% 85%);
-}
-.lp-hidden{
+
+.lp-hidden {
     z-index: 2;
     visibility: hidden;
     position: absolute;
-    top:35px;
+    top: 35px;
     right: 3px;
     width: 150px;
     height: 80px;
     background-color: white;
     border-radius: 10px;
 }
-.date{
+
+.date {
     font-size: 12px;
 }
-.fa-angle-down{
+
+.fa-angle-down {
     z-index: 3;
     padding: 2px;
-    background-color:transparent;
     border-radius: 50%;
     visibility: hidden;
     position: absolute;
@@ -126,9 +162,11 @@ a{
     bottom: 10px;
     cursor: pointer;
 }
-.hover{
-    
+
+.card:hover {
+    background-color: rgb(196, 193, 193);
 }
-.cardMessage:hover .fa-angle-down{
+
+.cardMessage:hover .fa-angle-down {
     visibility: visible;
 }
