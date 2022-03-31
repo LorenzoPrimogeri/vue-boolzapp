@@ -120,7 +120,7 @@ input {
 
 .user-message {
     overflow-y: auto;
-    height: calc(100% - 230px);
+    height: calc(100% - 207px);
 }
 
 .col-8 {

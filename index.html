@@ -63,7 +63,7 @@
                             </div>
                             <div class="w-100">
                                 <input class="w-75" type="text" placeholder="Cerca o inizia una nuova chat"
-                                    v-model="userName" @keyup.enter="ricercaUtente()">
+                                    v-model="userName" @input="ricercaUtente()">
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                                     :class="['position-relative p-1 w-40 my-2 rounded-3 cardMessage d-flex justify-content-between', sentOReceivedColor(element.status)]">
                                     <p class="m-0 p-2">{{element.message}}</p>
                                     <div class="d-flex align-items-end flex-column justify-content-end">
-                                        <i :class="['fa-solid fa-angle-down px-2 c-grey', bgColor(element.status)]"
+                                        <i :class="['fa-solid fa-angle-down px-2 c-grey',sentOReceivedColor(element.status)]"
                                             @click="visualizzaInfoMess(element)"></i>
                                         <span class="align-self-end px-1 c-grey date">{{element.date}}</span>
                                     </div>

@@ -252,7 +252,7 @@ const app = new Vue({
                 }
                 console.log(this.contacts[i].visible);
             }
-            this.userName = '';
+            //this.userName = '';
         },
         visualizzaInfoMess(message) {
             message.tooltip = !message.tooltip;
@@ -261,13 +261,5 @@ const app = new Vue({
             this.contacts[this.index].messages.splice(messageIndex, 1);
             console.log(this.contacts[this.index].messages);
         },
-        bgColor(element) {
-            // assegna il bg all'icona in base al messaggio
-            if (element == "received") {
-                return "bg-white"
-            } else {
-                return "sent-message"
-            }
-        }
     }
 });
