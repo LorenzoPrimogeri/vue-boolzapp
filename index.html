@@ -24,7 +24,7 @@
                 <!-- parte sinistra (messaggi degli utenti) -->
                 <div class="col-4 user-list">
                     <!--My Profile-->
-                    <div class="row justify-content-between bg-grey height">
+                    <div class="row justify-content-between bg-grey">
                         <div class="col-3 d-flex align-items-center">
                             <img class="py-2" src="img/avatar_io.jpg" alt="MyImg">
                             <span>Sofia</span>
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <!-- Notifiche -->
-                    <div class="row bg-heavenly py-2 height">
+                    <div class="row bg-heavenly py-2">
                         <div class="col-3 d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-bell-slash p-3 bg-white c-heavenly"></i>
                         </div>
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <!-- search chat -->
-                    <div class="py-2  height-50">
+                    <div class="py-2  ">
                         <div class="row border py-2 mx-2">
                             <div class="col-1">
                                 <i class="fa-solid fa-magnifying-glass c-grey"></i>
@@ -80,7 +80,7 @@
                 <!-- parte destra (chat) -->
                 <div class="col-8 p-0 user-chat">
                     <!-- chat header -->
-                    <div class=" d-flex bg-grey justify-content-between height">
+                    <div class=" d-flex bg-grey justify-content-between">
                         <div class="d-flex">
                             <div>
                                 <img class="m-2 lp-rounded" :src="'img/avatar'+contacts[index].avatar+'.jpg'" alt="">
@@ -121,7 +121,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="chat-footer height-50 bg-grey w-100 d-flex justify-content-around align-items-center">
+                    <div class="chat-footer py-3 bg-grey w-100 d-flex justify-content-around align-items-center">
                         <i class="far fa-smile c-grey"></i>
                         <input type="text" v-model="messaggio" class="w-75 p-1 rounded-3"
                             placeholder="scrivi un messaggio" @keyup.enter="mandaMessaggio">

@@ -5,6 +5,7 @@
     font-weight: 500;
 }
 
+/******************** dom modify *****************/
 body {
     background-image: url("img/body-bg.jpg");
     margin: 5vh 0px auto;
@@ -22,15 +23,14 @@ a {
     text-decoration: none !important;
 }
 
-a:hover {
-    color: grey;
-}
-
 input {
     outline: none !important;
     border: none !important;
 }
 
+/******************** /dom modify *****************/
+
+/******************** utility *****************/
 .w-10 {
     width: 10%;
 }
@@ -45,14 +45,6 @@ input {
 
 .w-40 {
     width: 40%;
-}
-
-.height {
-    height: 80px;
-}
-
-.height-50 {
-    height: 50px;
 }
 
 .border-g {
@@ -103,6 +95,7 @@ input {
     color: lightgreen
 }
 
+/******************** utility *****************/
 .user-list {
     height: 90vh;
 }
@@ -117,15 +110,9 @@ input {
     border-radius: 50%;
 }
 
-.fa-bell-slash {
-    font-size: 20px;
-    border: 1px solid white;
-    border-radius: 50%;
-}
-
 .user-message {
     overflow-y: auto;
-    height: calc(90vh - 207px);
+    height: calc(90vh - 238px);
 }
 
 .user-chat {
@@ -161,6 +148,12 @@ input {
     font-size: 12px;
 }
 
+.fa-bell-slash {
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
 .fa-angle-down {
     z-index: 3;
     padding: 2px;
@@ -172,10 +165,16 @@ input {
     cursor: pointer;
 }
 
+/**************** hover *******************/
 .card:hover {
     background-color: rgb(196, 193, 193);
 }
 
 .cardMessage:hover .fa-angle-down {
     visibility: visible;
+}
+
+
+a:hover {
+    color: grey;
 }

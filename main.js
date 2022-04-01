@@ -231,21 +231,23 @@ const app = new Vue({
             if (hr < 10) {
                 hr = "0" + hr;
             }
-            console.log();
-            let newMessaggio = {
-                date: hr + ":" + mn,
-                message: this.messaggio.trim(),
-                status: 'sent'
+            if (this.messaggio.length > 0) {
+                let newMessaggio = {
+                    date: hr + ":" + mn,
+                    message: this.messaggio.trim(),
+                    tooltip: false,
+                    status: 'sent'
+                }
+                this.contacts[this.index].messages.push(newMessaggio);
+                this.messaggio = '';
+                const time = setTimeout(this.messaggioRisposta, 1000, hr, mn)
             }
-            this.contacts[this.index].messages.push(newMessaggio);
-            this.messaggio = '';
-            const time = setTimeout(this.messaggioRisposta, 1000, hr, mn)
         },
         ricercaUtente() {
             //ricerca un utente nella barra di ricerca a sinistra
             for (let i = 0; i < this.contacts.length; i++) {
                 let nomi = this.contacts[i].name.toLowerCase();
-                if (nomi.includes(this.userName)) {
+                if (nomi.includes(this.userName.toLowerCase())) {
                     this.contacts[i].visible = true;
                 }
                 else {
