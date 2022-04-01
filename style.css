@@ -7,7 +7,7 @@
 
 body {
     background-image: url("img/body-bg.jpg");
-    margin: 70px auto;
+    margin: 5vh 0px auto;
 }
 
 img {
@@ -104,7 +104,7 @@ input {
 }
 
 .user-list {
-    height: 900px;
+    height: 90vh;
 }
 
 .col-4 img {
@@ -125,7 +125,7 @@ input {
 
 .user-message {
     overflow-y: auto;
-    height: calc(100% - 207px);
+    height: calc(90vh - 207px);
 }
 
 .user-chat {
@@ -133,7 +133,7 @@ input {
 }
 
 .chat {
-    height: calc(900px - 130px);
+    height: calc(90vh - 130px);
     overflow-y: auto;
 }
 
